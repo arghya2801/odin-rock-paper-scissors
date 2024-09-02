@@ -26,6 +26,9 @@ function getHumanChoice(){
 let human_score = 0;
 let computer_score = 0;
 
+
+
+
 function playRound(human_choice, computer_choice) {
     if (human_choice == computer_choice){
         console.log("Both played " + human_choice + ", so tied");
@@ -50,7 +53,20 @@ function playRound(human_choice, computer_choice) {
     }
 }
 
-let computer_choice_function = computerChoiceMove();
-let human_input = getHumanChoice();
+function playGame(){
+    for (let i = 0; i < 5; i++){
+        let computer_choice_function = computerChoiceMove();
+        let human_input = getHumanChoice();
+        playRound(human_input, computer_choice_function);
+    }
 
-console.log(playRound(human_input, computer_choice_function));
+    console.log("Your score - " + human_score);
+    console.log("Computer score - " + computer_score);
+    if (human_score > computer_score) console.log("You win!")
+    else if (human_score < computer_score) console.log("You lose!")
+    else console.log("Game Tied!")
+}
+
+
+// console.log(playRound(human_input, computer_choice_function));
+console.log(playGame())
