@@ -1,5 +1,20 @@
 console.log("Hello World");
 
+const rock = document.getElementById("rock")
+rock.addEventListener("click", () => {
+    alert("Button Clicked");
+});
+
+const paper = document.getElementById("paper")
+paper.addEventListener("click", () => {
+    alert("Button Clicked");
+});
+
+const scissor = document.getElementById("scissor")
+scissor.addEventListener("click", () => {
+    alert("Button Clicked");
+});
+
 function getComputerChoice() {
     return Math.random();
 }
@@ -54,11 +69,11 @@ function playRound(human_choice, computer_choice) {
 }
 
 function playGame(){
-    for (let i = 0; i < 5; i++){
+    // for (let i = 0; i < 5; i++){
         let computer_choice_function = computerChoiceMove();
         let human_input = getHumanChoice();
         playRound(human_input, computer_choice_function);
-    }
+    // }
 
     console.log("Your score - " + human_score);
     console.log("Computer score - " + computer_score);
@@ -69,4 +84,4 @@ function playGame(){
 
 
 // console.log(playRound(human_input, computer_choice_function));
-console.log(playGame())
+// console.log(playGame())
