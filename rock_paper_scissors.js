@@ -1,19 +1,5 @@
 console.log("Hello World");
 
-const rock = document.getElementById("rock")
-rock.addEventListener("click", () => {
-    alert("Button Clicked");
-});
-
-const paper = document.getElementById("paper")
-paper.addEventListener("click", () => {
-    alert("Button Clicked");
-});
-
-const scissor = document.getElementById("scissor")
-scissor.addEventListener("click", () => {
-    alert("Button Clicked");
-});
 
 function getComputerChoice() {
     return Math.random();
@@ -29,7 +15,7 @@ function computerChoiceMove() {
     } else {
         computer_choice = 2;
     }
-
+    
     return computer_choice;
 }
 
@@ -73,15 +59,38 @@ function playGame(){
         let computer_choice_function = computerChoiceMove();
         let human_input = getHumanChoice();
         playRound(human_input, computer_choice_function);
-    // }
-
-    console.log("Your score - " + human_score);
-    console.log("Computer score - " + computer_score);
-    if (human_score > computer_score) console.log("You win!")
-    else if (human_score < computer_score) console.log("You lose!")
-    else console.log("Game Tied!")
+        // }
+        
+        console.log("Your score - " + human_score);
+        console.log("Computer score - " + computer_score);
+        if (human_score > computer_score) console.log("You win!")
+            else if (human_score < computer_score) console.log("You lose!")
+        else console.log("Game Tied!")
 }
 
 
 // console.log(playRound(human_input, computer_choice_function));
 // console.log(playGame())
+
+const resultsDiv = document.getElementById("results");
+
+const rock = document.getElementById("rock");
+rock.addEventListener("click", () => {
+    console.log("rock");
+    resultsDiv.innerHTML = `
+    <p>Result</p>
+    <p>Player Score: ${human_score}</p>
+    <p>Computer Score: ${computer_score}</p>
+    `
+    
+});
+
+const paper = document.getElementById("paper");
+paper.addEventListener("click", () => {
+    console.log("paper");
+});
+
+const scissor = document.getElementById("scissor");
+scissor.addEventListener("click", () => {
+    console.log("scissor");
+});
