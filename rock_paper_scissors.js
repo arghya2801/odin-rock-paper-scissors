@@ -77,6 +77,9 @@ const resultsDiv = document.getElementById("results");
 const rock = document.getElementById("rock");
 rock.addEventListener("click", () => {
     console.log("rock");
+    let computer_choice_function = computerChoiceMove();
+    let human_input = 1;
+    playRound(human_input, computer_choice_function);
     resultsDiv.innerHTML = `
     <p>Result</p>
     <p>Player Score: ${human_score}</p>
@@ -88,9 +91,15 @@ rock.addEventListener("click", () => {
 const paper = document.getElementById("paper");
 paper.addEventListener("click", () => {
     console.log("paper");
+    let computer_choice_function = computerChoiceMove();
+    let human_input = 2;
+    playRound(human_input, computer_choice_function);
 });
 
 const scissor = document.getElementById("scissor");
 scissor.addEventListener("click", () => {
     console.log("scissor");
+    let computer_choice_function = computerChoiceMove();
+    let human_input = 3;
+    playRound(human_input, computer_choice_function);
 });
