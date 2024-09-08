@@ -70,7 +70,7 @@ function playGame(){
 
 function displayScore(){
     resultsDiv.innerHTML = `
-    <p>Result</p>
+    <h2>Results</h1>
     <p>Player Score: ${human_score}</p>
     <p>Computer Score: ${computer_score}</p>
     `
@@ -82,7 +82,7 @@ function displayScore(){
         }
         
         resultsDiv.innerHTML = `
-        <p>Final Result</p>
+        <h2>Final Result</h2>
         <p>Player Score: ${human_score}</p>
         <p>Computer Score: ${computer_score}</p>
         `
