@@ -68,6 +68,13 @@ function playGame(){
         else console.log("Game Tied!")
 }
 
+function displayScore(){
+    resultsDiv.innerHTML = `
+    <p>Result</p>
+    <p>Player Score: ${human_score}</p>
+    <p>Computer Score: ${computer_score}</p>
+    `
+}
 
 // console.log(playRound(human_input, computer_choice_function));
 // console.log(playGame())
@@ -80,12 +87,7 @@ rock.addEventListener("click", () => {
     let computer_choice_function = computerChoiceMove();
     let human_input = 1;
     playRound(human_input, computer_choice_function);
-    resultsDiv.innerHTML = `
-    <p>Result</p>
-    <p>Player Score: ${human_score}</p>
-    <p>Computer Score: ${computer_score}</p>
-    `
-    
+    displayScore();
 });
 
 const paper = document.getElementById("paper");
@@ -94,6 +96,7 @@ paper.addEventListener("click", () => {
     let computer_choice_function = computerChoiceMove();
     let human_input = 2;
     playRound(human_input, computer_choice_function);
+    displayScore();
 });
 
 const scissor = document.getElementById("scissor");
@@ -102,4 +105,5 @@ scissor.addEventListener("click", () => {
     let computer_choice_function = computerChoiceMove();
     let human_input = 3;
     playRound(human_input, computer_choice_function);
+    displayScore();
 });
