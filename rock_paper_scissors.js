@@ -32,24 +32,24 @@ let computer_score = 0;
 
 function playRound(human_choice, computer_choice) {
     if (human_choice == computer_choice){
-        console.log("Both played " + human_choice + ", so tied");
+        alert("Both played " + human_choice + ", so tied");
     } else if (human_choice == 1 && computer_choice == 2){
-        console.log("You lose! " + computer_choice + " beats " + human_choice);
+        alert("You lose! " + computer_choice + " beats " + human_choice);
         computer_score += 1;
     } else if (human_choice == 1 && computer_choice == 3){
-        console.log("You win! " + human_choice + " beats " + computer_choice);
+        alert("You win! " + human_choice + " beats " + computer_choice);
         human_score += 1;
     } else if (human_choice == 2 && computer_choice == 1){
-        console.log("You win! " + human_choice + " beats " + computer_choice);
+        alert("You win! " + human_choice + " beats " + computer_choice);
         human_score += 1;
     } else if (human_choice == 2 && computer_choice == 3){
-        console.log("You lose! " + computer_choice + " beats " + human_choice);
+        alert("You lose! " + computer_choice + " beats " + human_choice);
         computer_score += 1;
     } else if (human_choice == 3 && computer_choice == 1){
-        console.log("You lose! " + computer_choice + " beats " + human_choice);
+        alert("You lose! " + computer_choice + " beats " + human_choice);
         computer_score += 1;
     } else if (human_choice == 3 && computer_choice == 2){
-        console.log("You win! " + human_choice + " beats " + computer_choice);
+        alert("You win! " + human_choice + " beats " + computer_choice);
         human_score += 1;
     }
 }
@@ -74,6 +74,24 @@ function displayScore(){
     <p>Player Score: ${human_score}</p>
     <p>Computer Score: ${computer_score}</p>
     `
+    if (human_score == 5 || computer_score == 5){
+        if (human_score == 5) {
+            alert("You win the game!")
+        } else if (computer_score == 5){
+            alert("You lose!")
+        }
+        
+        resultsDiv.innerHTML = `
+        <p>Final Result</p>
+        <p>Player Score: ${human_score}</p>
+        <p>Computer Score: ${computer_score}</p>
+        `
+        
+    
+        human_score = 0;
+        computer_score = 0;
+    }
+    
 }
 
 // console.log(playRound(human_input, computer_choice_function));
@@ -107,3 +125,4 @@ scissor.addEventListener("click", () => {
     playRound(human_input, computer_choice_function);
     displayScore();
 });
+
